@@ -8,11 +8,7 @@ let users = {
   admin: { username: 'admin', password: 'password' },
 };
 
-// Pre-load our database with fake users
-beforeAll(async (done) => {
-  await new Users(users.admin).save();
-  done();
-});
+
 
 describe('Auth Middleware', () => {
 
@@ -29,7 +25,6 @@ describe('Auth Middleware', () => {
 
   describe('user authentication', () => {
 
-    //login Credentials : username, password
     it('fails a login for a user (admin) with the incorrect basic credentials', () => {
 
       // Change the request to match this test case
@@ -54,10 +49,10 @@ describe('Auth Middleware', () => {
 
       return middleware(req, res, next)
         .then(() => {
-          expect(next).toHaveBeenCalledWith();
+          expect(next).not.toHaveBeenCalledWith();
         });
 
-    }); // it()
+    });
 
   });
 
