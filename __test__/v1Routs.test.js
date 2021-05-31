@@ -16,7 +16,7 @@ mongoose.connect(process.env.MONGOOSE_TEST_URI, {
   useUnifiedTopology: true});
 
 
-  let id;
+let id;
 describe('api server', () => {
   afterAll(() => {// we need to close the connection after tests
     mongoose.connection.close();
@@ -27,10 +27,10 @@ describe('api server', () => {
   it('should create a new food using post request', async () => {
     //arrange
     let food = {
-"name": "banana",
-"calories": 500,
-"type": "VEGETABLE"
-}
+      'name': 'banana',
+      'calories': 500,
+      'type': 'VEGETABLE',
+    };
     //act
     const response = await request.post('/api/v1/food').send(food);
     //assert
@@ -46,10 +46,10 @@ describe('api server', () => {
   it('should update a food using put request', async () => {
     //arrange
     let food = {
-"name": "banana",
-"calories": 500,
-"type": "FRUIT"
-};
+      'name': 'banana',
+      'calories': 500,
+      'type': 'FRUIT',
+    };
     //act
     const response = await request.put(`/api/v1/food/${id}`)
       .send(food);
@@ -92,9 +92,9 @@ describe('api server', () => {
   it('should create a new clothes using post request', async () => {
     //arrange
     let clothes = {
-      "name": "gucci",
-      "color":"red",
-      "size": "xl"
+      'name': 'gucci',
+      'color':'red',
+      'size': 'xl',
     };
     //act
     const response = await request.post('/api/v1/clothes').send(clothes);
@@ -112,9 +112,9 @@ describe('api server', () => {
   it('should update a clothes using put request', async () => {
     //arrange
     let clothes = {
-      "name": "gucci",
-      "color":"yellow",
-      "size": "xl"
+      'name': 'gucci',
+      'color':'yellow',
+      'size': 'xl',
     };
     //act
     const response = await request.put(`/api/v1/clothes/${id}`).send(clothes);

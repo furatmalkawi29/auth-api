@@ -18,7 +18,7 @@ Furat Malkawi
 
 ## Links
 
-* [Deployed App]()
+* [Deployed App](https://auth-api-furat.herokuapp.com/)
 * [Error Report](https://github.com/furatmalkawi29/auth-api/actions/)
 
 <hr>
